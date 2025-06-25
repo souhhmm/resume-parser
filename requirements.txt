@@ -3,5 +3,6 @@ spacy
 spacy-layout
 pdfminer.six
 docx2txt
-pyresparser
 nltk
+streamlit
+pandas

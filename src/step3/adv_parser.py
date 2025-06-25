@@ -588,7 +588,7 @@ class AdvancedResumeParser:
 
         return achievements
 
-    def parse_resume_comprehensive(self, text: str) -> Dict[str, Any]:
+    def parse_resume_full(self, text: str) -> Dict[str, Any]:
         sections = self.find_sections(text)
 
         # debug: print sections found
@@ -649,7 +649,7 @@ class AdvancedResumeParser:
                 print(text[:500])
                 print("\n=== end debug ===\n")
 
-            return self.parse_resume_comprehensive(text)
+            return self.parse_resume_full(text)
         except Exception as e:
             print(f"error parsing file {file_path}: {e}")
             return {
