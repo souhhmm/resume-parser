@@ -1,3 +1,5 @@
 from .extract_text import extract_text_from_resume
 from .llm_parser import parse_resume_text
 from .convert_data import convert_to_dataframes
+from .jd_parser import parse_job_description_text
+from .job_matcher import calculate_similarity_score, calculate_detailed_similarity, get_match_interpretation, extract_resume_text_for_matching, extract_jd_text_for_matching

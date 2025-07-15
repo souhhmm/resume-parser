@@ -6,3 +6,5 @@ docx2txt
 nltk
 streamlit
 pandas
+sentence-transformers
+scikit-learn

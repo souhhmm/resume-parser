@@ -7,6 +7,7 @@ from .display import (
     display_certifications,
     display_projects,
 )
+from .job_matching import render_job_matching_tab
 
 
 def render_data_tabs(parsed_data, dataframes):
@@ -18,6 +19,7 @@ def render_data_tabs(parsed_data, dataframes):
             "Skills",
             "Certifications",
             "Projects",
+            "Job Matching",
             "CSV View",
             "Raw Data",
         ]
@@ -77,7 +79,10 @@ def render_data_tabs(parsed_data, dataframes):
         else:
             st.info("No projects found")
 
-    with tabs[6]:  # csv view
+    with tabs[6]:  # job matching
+        render_job_matching_tab(parsed_data)
+
+    with tabs[7]:  # csv view
         st.subheader("All Data in CSV Format")
         if dataframes:
             for section_name, df in dataframes.items():
@@ -87,5 +92,5 @@ def render_data_tabs(parsed_data, dataframes):
         else:
             st.info("No data available for CSV view")
 
-    with tabs[7]:  # raw data
+    with tabs[8]:  # raw data
         st.json(parsed_data)

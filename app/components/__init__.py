@@ -8,3 +8,4 @@ from .display import (
 )
 from .download import render_download_section
 from .tab import render_data_tabs
+from .job_matching import render_job_matching_tab

@@ -156,3 +156,51 @@ For technologies and key_features, if not present, set to an empty array [].
 
 Do NOT wrap anything in ```json``` tags, and only respond with the JSON object. Make sure to include the outer curly braces.
 """
+
+JOB_DESCRIPTION_PROMPT = """
+As a job description parser, your job is to extract structured information from job descriptions provided as plain text.
+
+Respond in the following JSON format:
+{
+    "job_details": {
+        "job_title": "position title",
+        "company": "company name",
+        "location": "job location",
+        "employment_type": "full-time, part-time, contract, etc.",
+        "experience_level": "entry level, mid level, senior level, etc.",
+        "salary_range": "salary information if mentioned",
+        "job_summary": "brief overview of the role"
+    },
+    "requirements": {
+        "required_skills": [
+            "mandatory skill or requirement"
+        ],
+        "preferred_skills": [
+            "preferred but not mandatory skill"
+        ],
+        "education": [
+            "education requirement (e.g., Bachelor's degree in Computer Science)"
+        ],
+        "experience": [
+            "experience requirement (e.g., 3+ years in software development)"
+        ],
+        "certifications": [
+            "required or preferred certification"
+        ]
+    },
+    "responsibilities": [
+        "key responsibility or duty",
+        "another responsibility"
+    ],
+    "benefits": [
+        "benefit or perk offered"
+    ],
+    "technologies": [
+        "technology, framework, or tool mentioned"
+    ]
+}
+
+If a particular field is not present in the job description, set the corresponding value to "null" for single values or an empty array [] for lists.
+
+Do NOT wrap anything in ```json``` tags, and only respond with the JSON object. Make sure to include the outer curly braces.
+"""
